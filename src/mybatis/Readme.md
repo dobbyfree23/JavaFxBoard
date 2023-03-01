@@ -1,4 +1,4 @@
-##MyBatis
+## MyBatis
 
 MyBatis는 SQL 쿼리를 빌드하기 위한 자체 문법을 제공합니다. 
 이러한 문법을 사용하여 데이터베이스에 대한 CRUD(Create, Read, Update, Delete) 작업을 수행할 수 있습니다. 
@@ -6,34 +6,38 @@ MyBatis는 SQL 쿼리를 빌드하기 위한 자체 문법을 제공합니다.
 
 ### select 문
 MyBatis에서 select 문을 작성하는 방법은 다음과 같습니다.
-
+```
 <select id="selectById" resultType="com.example.domain.User">
   SELECT * FROM user WHERE id = #{id}
 </select>
+```
 위의 select 문에서는 id라는 이름을 가진 파라미터를 받아와서 user 테이블에서 해당하는 데이터를 조회합니다. resultType 속성에는 조회 결과를 매핑할 클래스의 패키지 경로와 클래스 이름을 지정합니다. 결과를 매핑할 클래스는 User 클래스입니다.
 
 ### insert 문
 MyBatis에서 insert 문을 작성하는 방법은 다음과 같습니다.
-
+```
 <insert id="insert" parameterType="com.example.domain.User">
   INSERT INTO user (id, name, email) VALUES (#{id}, #{name}, #{email})
 </insert>
+```
 위의 insert 문에서는 User 클래스를 파라미터로 받아와서 user 테이블에 데이터를 추가합니다.
 
 ### update 문
 MyBatis에서 update 문을 작성하는 방법은 다음과 같습니다.
-
+```
 <update id="update" parameterType="com.example.domain.User">
   UPDATE user SET name = #{name}, email = #{email} WHERE id = #{id}
 </update>
+```
 위의 update 문에서는 User 클래스를 파라미터로 받아와서 user 테이블에서 해당하는 데이터를 수정합니다.
 
 ### delete 문
 MyBatis에서 delete 문을 작성하는 방법은 다음과 같습니다.
-
+```
 <delete id="deleteById" parameterType="int">
   DELETE FROM user WHERE id = #{id}
 </delete>
+```
 위의 delete 문에서는 id라는 이름을 가진 파라미터를 받아와서 user 테이블에서 해당하는 데이터를 삭제합니다.
 
 
