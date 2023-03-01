@@ -17,7 +17,7 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene); 
 			
-			primaryStage.setTitle("태호 일기장!");
+			primaryStage.setTitle("BoardApp");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
