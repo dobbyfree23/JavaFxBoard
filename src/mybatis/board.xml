@@ -11,6 +11,7 @@
 		<result column="BOARD_WRITER" property="boardWriter"/>
 		<result column="BOARD_CONTENT" property="boardContent"/>
 		<result column="BOARD_DATE" property="boardDate"/>
+		<result column="BOARD_TYPE" property="boardType"/>
 	</resultMap>
 	
 	
@@ -35,14 +36,17 @@
 		<if test='boardWriter != null and boardWriter != ""'>
 		    AND board_writer = #{boardWriter}
 		</if>
+		<if test='boardType != null and boardType != ""'>
+		    AND board_type = #{boardType}
+		</if>
 	    ORDER BY board_date DESC
 	</select>
 	
 	<insert id="insertTest" parameterType="vo.BoardVO">
 		INSERT INTO fx_board
-		(board_id, board_title, board_writer, board_date, board_content)
+		(board_id, board_title, board_writer, board_date, board_content, board_type)
 		VALUES
-		(fx_board_seq.NEXTVAL, #{boardTitle}, #{boardWriter}, SYSDATE, #{boardContent})
+		(fx_board_seq.NEXTVAL, #{boardTitle}, #{boardWriter}, SYSDATE, #{boardContent}, #{boardType})
 	</insert>
 	
 	<update id = "updateTest" parameterType="vo.BoardVO">

@@ -30,7 +30,7 @@ public interface BoardBiz {
     * @param String boardWriter
     * @return java.util.List<BoardVO>
     */
-   public List<BoardVO> selectBoardList(String boardTitle, String boardWriter);
+   public List<BoardVO> selectBoardList(String boardTitle, String boardWriter, String boardType);
    
    /**
     * selectBoard - 게시판 상세글 조회

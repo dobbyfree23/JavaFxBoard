@@ -40,15 +40,21 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public List<BoardVO> selectBoardList(SqlSession mapper, String boardTitle, String boardWriter) {
+	public List<BoardVO> selectBoardList(SqlSession mapper, String boardTitle, String boardWriter, String boardType) {
 		System.out.println("dao selectBoardList");
 		List<BoardVO> resultList = null;
 		BoardVO boardVO = new BoardVO();
 		boardVO.setBoardTitle(boardTitle);
 		boardVO.setBoardWriter(boardWriter);
+		boardVO.setBoardType(boardType);
+		
+		System.out.println(boardVO);
 		
 		try {
 			resultList = mapper.selectList("test.selectTest", boardVO);
+			
+			System.out.println(resultList);
+			System.out.println(resultList.get(0));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

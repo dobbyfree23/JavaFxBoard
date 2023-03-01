@@ -33,10 +33,10 @@ public class BoardBizImpl implements BoardBiz{
 	
 	
 	@Override
-	public List<BoardVO> selectBoardList(String boardTitle, String boardWriter) {
+	public List<BoardVO> selectBoardList(String boardTitle, String boardWriter, String boardType) {
 		System.out.println("selectBoardList");
 		SqlSession mapper = MySession.getSession();
-		return dao.selectBoardList(mapper, boardTitle, boardWriter);
+		return dao.selectBoardList(mapper, boardTitle, boardWriter, boardType);
 	}
 
 	@Override

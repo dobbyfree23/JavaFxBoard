@@ -65,12 +65,13 @@ java.lang.NoClassDefFoundError: javafx/application/Application
 
 - fx_board 테이블 
 ```
-CREATE TABLE "FX_BOARD" (
-    "BOARD_ID"      NUMBER(11, 0),
-    "BOARD_TITLE"   VARCHAR2(255 BYTE) DEFAULT NULL,
-    "BOARD_WRITER"  VARCHAR2(255 BYTE) DEFAULT NULL,
-    "BOARD_CONTENT" CLOB,
-    "BOARD_DATE"    DATE DEFAULT SYSDATE,
+CREATE TABLE HR.FX_BOARD (
+  BOARD_ID         NUMBER(11)        NOT NULL, 
+  BOARD_TITLE      VARCHAR2(255)    DEFAULT NULL         NULL, 
+  BOARD_WRITER     VARCHAR2(255)    DEFAULT NULL         NULL, 
+  BOARD_CONTENT    CLOB                  NULL, 
+  BOARD_DATE       DATE             DEFAULT SYSDATE                  NULL, 
+  BOARD_TYPE       VARCHAR2(11)      NOT NULL
     PRIMARY KEY ( "BOARD_ID" )
 );
 

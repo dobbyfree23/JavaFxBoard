@@ -6,6 +6,7 @@ public class BoardVO {
 	private String boardWriter;
 	private String boardDate;
 	private String boardContent;
+	private String boardType;
 	
 	public String getBoardId() {
 		return boardId;
@@ -37,13 +38,19 @@ public class BoardVO {
 	public void setBoardContent(String boardContent) {
 		this.boardContent = boardContent;
 	}
-	
-    @Override
+    public String getBoardType() {
+		return boardType;
+	}
+	public void setBoardType(String boardType) {
+		this.boardType = boardType;
+	}
+	@Override
     public String toString() {
         return "BoardVO [boardId=" + boardId 
         		+ ", boardTitle=" + boardTitle 
         		+ ", boardWriter=" + boardWriter 
         		+ ", boardDate=" + boardDate 
+        		+ ", boardType=" + boardType
         		+ "]";
     }
 
