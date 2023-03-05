@@ -47,7 +47,6 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("initialize");
 		
 		this.boardType = "BOARD1";
 		
@@ -228,5 +227,15 @@ public class MainController implements Initializable {
 		}
 
 	}
+
+	public String getBoardType() {
+		return boardType;
+	}
+
+	public void setBoardType(String boardType) {
+		this.boardType = boardType;
+	}
+	
+	
 
 }

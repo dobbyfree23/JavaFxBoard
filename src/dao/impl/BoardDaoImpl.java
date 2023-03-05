@@ -67,7 +67,6 @@ public class BoardDaoImpl implements BoardDao {
 		System.out.println("boardId : " + boardId);
 		try {
 			vo = (BoardVO) mapper.selectOne("test.selectTest", boardVO);
-			System.out.println("vo :" + vo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -78,7 +77,7 @@ public class BoardDaoImpl implements BoardDao {
 	@Override
 	public void insertBoard(SqlSession mapper, BoardVO vo) {
 		try {
-			System.out.println("insertTest : " + mapper.insert("test.insertTest", vo));
+			mapper.insert("test.insertTest", vo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -89,7 +88,7 @@ public class BoardDaoImpl implements BoardDao {
 	public void updateBoard(SqlSession mapper, BoardVO vo) {
 
 		try {
-			System.out.println("updateTest : " + mapper.update("test.updateTest", vo));
+			mapper.update("test.updateTest", vo);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -101,8 +100,7 @@ public class BoardDaoImpl implements BoardDao {
 		boardVO.setBoardId(boardId);
 
 		try {
-			System.out.println("deleteTest : " +mapper.delete("test.deleteTest", boardVO));
-			
+			mapper.delete("test.deleteTest", boardVO);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
