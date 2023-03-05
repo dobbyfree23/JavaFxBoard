@@ -52,9 +52,7 @@ public class BoardDaoImpl implements BoardDao {
 		
 		try {
 			resultList = mapper.selectList("test.selectTest", boardVO);
-			
 			System.out.println(resultList);
-			System.out.println(resultList.get(0));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
